@@ -1,6 +1,11 @@
 /* For global layout styles only */
 .App {
   text-align: center;
+   background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .App-header {
