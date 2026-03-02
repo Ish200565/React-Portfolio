@@ -71,8 +71,8 @@
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(61, 156, 48, 0.3);
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
   animation: glowPulse 4s ease-in-out infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -106,12 +106,12 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(100%) contrast(1.1);
   transition: filter 0.5s ease, transform 0.5s ease;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .profile-card:hover .profile-avatar {
-  filter: grayscale(70%) contrast(1.15);
   transform: scale(1.05);
 }
 
@@ -123,9 +123,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--overlay-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(61, 156, 48, 0.4);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 12px 20px;
   animation: handleSlideIn 0.8s ease-out forwards;
@@ -141,11 +141,12 @@
 }
 
 .profile-handle {
-  font-size: 14px;
-  font-weight: 500;
-  color: #3d9c30;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 10px rgba(61, 156, 48, 0.5);
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Press Start 2P', cursive;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px var(--shadow-color);
   transition: text-shadow 0.3s ease;
 }
 
@@ -167,7 +168,7 @@
   }
 
   .profile-handle {
-    font-size: 13px;
+    font-size: 9px;
   }
 
   @keyframes float {
@@ -193,7 +194,7 @@
   }
 
   .profile-handle {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
 

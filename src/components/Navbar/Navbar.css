@@ -10,10 +10,10 @@
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.95);
+    background: var(--overlay-bg);
     backdrop-filter: blur(10px);
     padding: 1rem 3rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px var(--shadow-color);
 }
 
 .navbar-container {
@@ -27,13 +27,13 @@
 .navbar-logo {
     font-size: 1.8rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-primary);
     cursor: pointer;
     letter-spacing: 2px;
 }
 
 .logo-dot {
-    color: #6366f1;
+    color: var(--accent);
 }
 
 .navbar-menu {
@@ -42,7 +42,7 @@
 }
 
 .navbar-menu span {
-    color: #a1a1aa;
+    color: var(--text-secondary);
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
@@ -52,7 +52,7 @@
 }
 
 .navbar-menu span:hover {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .navbar-menu span::after {
@@ -62,7 +62,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #6366f1;
+    background: var(--accent);
     transition: width 0.3s ease;
 }
 
@@ -70,10 +70,44 @@
     width: 100%;
 }
 
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--accent);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.theme-toggle svg {
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+    transform: rotate(15deg);
+}
+
 .resume-btn {
     background: transparent;
-    border: 2px solid #6366f1;
-    color: #6366f1;
+    border: 2px solid var(--accent);
+    color: var(--accent);
     padding: 0.7rem 1.5rem;
     font-size: 0.85rem;
     font-weight: 600;
@@ -84,8 +118,8 @@
 }
 
 .resume-btn:hover {
-    background: #6366f1;
-    color: #fff;
+    background: var(--accent);
+    color: var(--bg-primary);
 }
 
 .hamburger {
@@ -98,7 +132,7 @@
 .hamburger span {
     width: 25px;
     height: 2px;
-    background: #fff;
+    background: var(--text-primary);
     transition: all 0.3s ease;
 }
 
@@ -124,7 +158,8 @@
         top: 70px;
         left: 0;
         right: 0;
-        background: rgba(10, 10, 10, 0.98);
+        background: var(--overlay-bg);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
         padding: 2rem 0;
@@ -141,7 +176,27 @@
         display: flex;
     }
 
-    .resume-btn {
+    .navbar-actions {
         display: none;
+    }
+}
+
+/* Mobile floating theme toggle */
+.mobile-theme-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-theme-toggle {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        z-index: 999;
+        background: var(--bg-secondary);
+        box-shadow: 0 4px 20px var(--shadow-color);
     }
 }

@@ -57,8 +57,15 @@ const Hero = () => {
             </div>
             
             <div className="hero-main">
+                <div className="hero-image-section">
+                    <ProfileCard
+                        avatarUrl="/avatar.gif"
+                        handle="ishikabelel"
+                    />
+                </div>
+
                 <div className="hero-content">
-                    <p className="hero-greeting">Hello! I'm</p>
+                    <p className="hero-greeting">&gt; Initializing...</p>
                     <h1 className="hero-name">ISHIKA BELEL</h1>
                     <div className="hero-title-wrapper">
                         <span className="hero-title">{displayText}</span>
@@ -76,13 +83,6 @@ const Hero = () => {
                             Get In Touch
                         </button>
                     </div>
-                </div>
-
-                <div className="hero-image-section">
-                    <ProfileCard
-                        avatarUrl="/ishika.jpg"
-                        handle="ishikabelel"
-                    />
                 </div>
             </div>
 
