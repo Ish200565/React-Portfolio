@@ -3,7 +3,7 @@ import './ProfileCard.css';
 
 const ProfileCard = ({
   avatarUrl = '',
-  handle = 'ishikabelel',
+  handle = 'Ish200565',
   className = ''
 }) => {
   return (

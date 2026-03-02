@@ -4,7 +4,7 @@ import FaultyTerminal from './FaultyTerminal';
 import ProfileCard from './ProfileCard';
 
 const Hero = () => {
-    const titles = ['BACKEND DEVELOPER', 'API ARCHITECT', 'DATABASE SPECIALIST'];
+    const titles = ['BACKEND DEVELOPER', 'FULL STACK DEVELOPER', 'SOFTWARE ENGINEER'];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [displayText, setDisplayText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -60,13 +60,13 @@ const Hero = () => {
                 <div className="hero-image-section">
                     <ProfileCard
                         avatarUrl="/avatar.gif"
-                        handle="ishikabelel"
+                        handle="Ish200565"
                     />
                 </div>
 
                 <div className="hero-content">
                     <p className="hero-greeting">&gt; Initializing...</p>
-                    <h1 className="hero-name">ISHIKA BELEL</h1>
+                    <h1 className="hero-name animate-name">ISHIKA BELEL</h1>
                     <div className="hero-title-wrapper">
                         <span className="hero-title">{displayText}</span>
                         <span className="cursor">|</span>

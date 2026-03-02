@@ -55,6 +55,23 @@
     letter-spacing: 2px;
 }
 
+.animate-name {
+    animation: nameReveal 1s ease-out forwards;
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+@keyframes nameReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .hero-title-wrapper {
     display: flex;
     justify-content: flex-end;
