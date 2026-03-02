@@ -243,3 +243,17 @@
         display: none;
     }
 }
+
+/* Light theme overrides for hero text */
+[data-theme="light"] .hero-greeting,
+[data-theme="light"] .hero-description,
+[data-theme="light"] .scroll-indicator span {
+    color: #ffffff;
+}
+
+[data-theme="light"] .hero-name {
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

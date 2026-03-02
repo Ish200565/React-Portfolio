@@ -1,5 +1,5 @@
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -109,8 +109,9 @@
     border: 2px solid var(--accent);
     color: var(--accent);
     padding: 0.7rem 1.5rem;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 400;
+    font-family: 'Press Start 2P', cursive;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -199,4 +200,17 @@
         background: var(--bg-secondary);
         box-shadow: 0 4px 20px var(--shadow-color);
     }
+}
+
+/* Light theme overrides for navbar text */
+[data-theme="light"] .navbar-logo {
+    color: #ffffff;
+}
+
+[data-theme="light"] .navbar-menu span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] .navbar-menu span:hover {
+    color: #ffffff;
 }
