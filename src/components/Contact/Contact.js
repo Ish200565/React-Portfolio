@@ -3,10 +3,10 @@ import './Contact.css';
 
 const Contact = () => {
     const socialLinks = [
-        { name: 'GitHub', url: 'https://github.com/', icon: '⌘' },
-        { name: 'LinkedIn', url: 'https://linkedin.com/', icon: '◈' },
-        { name: 'Twitter', url: 'https://twitter.com/', icon: '✦' },
-        { name: 'Instagram', url: 'https://instagram.com/', icon: '◉' }
+        { name: 'GitHub', url: 'https://github.com/Ish200565', icon: '⌘' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ishika-belel-1669b12b7/', icon: '◈' },
+        { name: 'X', url: 'https://x.com/ishbelel', icon: '✦' },
+        { name: 'Instagram', url: 'https://instagram.com/ish_belel', icon: '◉' }
     ];
 
     return (
@@ -26,12 +26,12 @@ const Contact = () => {
                             
                             <div className="contact-item">
                                 <span className="contact-label">Email</span>
-                                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                                <a href="mailto:ishikabelel@gmail.com">ishikabelel@gmail.com</a>
                             </div>
                             
                             <div className="contact-item">
                                 <span className="contact-label">Location</span>
-                                <p>Your City, Country</p>
+                                <p>Mumbai, India</p>
                             </div>
 
                             <div className="contact-item">
@@ -58,11 +58,11 @@ const Contact = () => {
                         <form className="contact-form">
                             <div className="form-group">
                                 <label>Your Name</label>
-                                <input type="text" placeholder="John Doe" required />
+                                <input type="text" placeholder="Raj Gupta" required />
                             </div>
                             <div className="form-group">
                                 <label>Your Email</label>
-                                <input type="email" placeholder="john@example.com" required />
+                                <input type="email" placeholder="raj@example.com" required />
                             </div>
                             <div className="form-group">
                                 <label>Message</label>
