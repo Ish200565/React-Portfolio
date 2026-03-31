@@ -9,9 +9,9 @@ const Projects = () => {
             category: 'AI/ML, Web App',
             description: 'Streamlit app for sentiment & emotion analysis of social issue text. Real-time inference & confidence visualization.',
             tech: ['Python', 'Streamlit', 'Hugging Face'],
-            image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop',
+            image: 'https://plus.unsplash.com/premium_photo-1738663458243-7446dba4551d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2VudGltZW50JTIwYW5hbHlzaXN8ZW58MHx8MHx8fDA%3D',
             github: 'https://github.com/Ish200565/SocioSentiment',
-            live: '#'
+            live: 'https://sociosentiment-3kxktkrdd5bnlppxsv3zme.streamlit.app/'
         },
         {
             id: '02',
@@ -19,8 +19,8 @@ const Projects = () => {
             category: 'PWA, Healthcare',
             description: 'Offline-first PWA for NGOs to reduce medicine wastage & manage medical camps. Offline support & OCR-based tracking.',
             tech: ['Node.js', 'React', 'MongoDB', 'OCR'],
-            image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop',
-            github: '#',
+            image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            github: 'https://github.com/Ish200565/MedVerify-MVP',
             live: '#'
         },
         {
@@ -29,9 +29,8 @@ const Projects = () => {
             category: 'Safety Platform',
             description: 'Campus safety platform with image verification, NLP, and heatmaps. Complaint prioritization & live issue visualization.',
             tech: ['Python', 'Flask', 'Django', 'NLP', 'Map APIs'],
-            image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&h=600&fit=crop',
-            github: '#',
-            live: '#'
+            image: 'https://images.unsplash.com/photo-1758610840977-8ee55513281c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            demo: 'https://www.linkedin.com/posts/ishika-belel-1669b12b7_campusvoice-aiforsafety-nlp-activity-7390775687315460096-QgRy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwk3p4BiRfzg4Zdq3OQ-HtGw8qIr-IwtIs'
         },
         {
             id: '04',
@@ -39,9 +38,8 @@ const Projects = () => {
             category: 'Web App',
             description: 'Django web app connecting local vendors with working bachelors. Vendor–customer workflows & authentication.',
             tech: ['Django', 'Python', 'HTML', 'CSS', 'Bootstrap'],
-            image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop',
-            github: '#',
-            live: '#'
+            image: 'https://media.istockphoto.com/id/2200378390/photo/a-retro-indian-lunch-box-filled-with-vegetarian-food-and-chapati.webp?a=1&b=1&s=612x612&w=0&k=20&c=kVzI-iGNwBaEXO66gIoGdGmuL9NArE58Bb6be3fuxdc=',
+            demo:'https://www.linkedin.com/posts/raina-r-mitra-145aa4358_miniproject-django-pythondeveloper-ugcPost-7423319759980756992-0ArN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwk3p4BiRfzg4Zdq3OQ-HtGw8qIr-IwtIs'
         },
         {
             id: '05',
@@ -49,9 +47,9 @@ const Projects = () => {
             category: 'Full Stack',
             description: 'Full-stack app for practicing DSA via interactive flashcards. CRUD operations & secure DB integration.',
             tech: ['Flask', 'MongoDB', 'HTML', 'CSS', 'JavaScript'],
-            image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
-            github: '#',
-            live: '#'
+            image: 'https://plus.unsplash.com/premium_photo-1679957333039-285fb913aa2b?q=80&w=663&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            github: 'https://github.com/Ish200565/FlashDSA',
+            demo: 'https://www.linkedin.com/posts/ishika-belel-1669b12b7_just-built-flashdsa-a-full-stack-web-app-activity-7356717778675863552-uQ7O?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwk3p4BiRfzg4Zdq3OQ-HtGw8qIr-IwtIs'
         }
     ];
 

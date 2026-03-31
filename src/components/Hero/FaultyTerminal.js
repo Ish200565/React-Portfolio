@@ -266,6 +266,7 @@ export default function FaultyTerminal({
   }, []);
 
   useEffect(() => {
+    let isMounted = true;
     const ctn = containerRef.current;
     if (!ctn) return;
 
@@ -285,7 +286,6 @@ export default function FaultyTerminal({
           value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
         },
         uScale: { value: scale },
-
         uGridMul: { value: new Float32Array(gridMul) },
         uDigitSize: { value: digitSize },
         uScanlineIntensity: { value: scanlineIntensity },
@@ -325,7 +325,11 @@ export default function FaultyTerminal({
     resize();
 
     const update = t => {
+      if (!isMounted) return;
       rafRef.current = requestAnimationFrame(update);
+
+      if (!isMounted) return;
+      if (!renderer || !mesh || !program) return;
 
       if (pageLoadAnimation && loadAnimationStartRef.current === 0) {
         loadAnimationStartRef.current = t;
@@ -366,6 +370,7 @@ export default function FaultyTerminal({
     if (mouseReact) ctn.addEventListener('mousemove', handleMouseMove);
 
     return () => {
+      isMounted = false;
       cancelAnimationFrame(rafRef.current);
       resizeObserver.disconnect();
       if (mouseReact) ctn.removeEventListener('mousemove', handleMouseMove);
