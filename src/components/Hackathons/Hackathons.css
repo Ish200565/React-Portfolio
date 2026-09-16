@@ -1,0 +1,121 @@
+.hackathons {
+    padding: 100px 20px;
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.hackathons-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hackathons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.hackathon-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.hackathon-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.hackathon-card.attended {
+    border-style: dashed;
+    opacity: 0.9;
+}
+
+.hackathon-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.hackathon-level {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hackathon-badge {
+    background: rgba(61, 156, 48, 0.2);
+    color: var(--accent-light);
+    border: 1px solid var(--border-color);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.hackathon-title {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.project-highlight {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--accent);
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.proj-label {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.proj-name {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.hackathon-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.hackathon-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.hack-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    .hackathons-grid {
+        grid-template-columns: 1fr;
+    }
+}

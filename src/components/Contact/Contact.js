@@ -3,9 +3,10 @@ import './Contact.css';
 
 const Contact = () => {
     const socialLinks = [
-        { name: 'GitHub', url: 'https://github.com/Ish200565', icon: '⌘' },
+        { name: 'GitHub (230+ in 2026)', url: 'https://github.com/Ish200565', icon: '⌘' },
+        { name: 'LeetCode (60+ Solved)', url: 'https://leetcode.com/u/Ish200565/', icon: '⚡' },
         { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ishika-belel-1669b12b7/', icon: '◈' },
-        { name: 'X', url: 'https://x.com/ishbelel', icon: '✦' },
+        { name: 'X (Twitter)', url: 'https://x.com/ishbelel', icon: '✦' },
         { name: 'Instagram', url: 'https://instagram.com/ish_belel', icon: '◉' }
     ];
 

@@ -1,0 +1,174 @@
+.coding-stats {
+    padding: 100px 20px;
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.stat-icon-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.stat-badge {
+    background: rgba(61, 156, 48, 0.2);
+    color: var(--accent-light);
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.stat-title {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.stat-metric {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.stat-subtext {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.stat-link-btn {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.stat-link-btn:hover {
+    color: var(--accent);
+    gap: 12px;
+}
+
+.certifications-section {
+    margin-top: 60px;
+}
+
+.sub-section-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: var(--accent-light);
+    margin-bottom: 25px;
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.cert-title {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.cert-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cert-issuer {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.cert-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.cert-verify-link {
+    color: var(--accent-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.cert-verify-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .stats-cards-grid, .certs-grid {
+        grid-template-columns: 1fr;
+    }
+}
