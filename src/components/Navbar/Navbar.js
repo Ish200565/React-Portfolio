@@ -60,7 +60,7 @@ const Navbar = () => {
                             </svg>
                         )}
                     </button>
-                    <button className="resume-btn" onClick={() => window.open('/ISHIKA MAIN RESUME.pdf', '_blank')}>
+                    <button className="resume-btn" onClick={() => window.open('/Res_Ishika_Belel.pdf', '_blank')}>
                         RESUME
                     </button>
                 </div>
