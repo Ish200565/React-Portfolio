@@ -4,7 +4,11 @@ import FaultyTerminal from './FaultyTerminal';
 import ProfileCard from './ProfileCard';
 
 const Hero = () => {
-    const titles = ['BACKEND DEVELOPER', 'FULL STACK DEVELOPER', 'SOFTWARE ENGINEER'];
+    const titles = [
+        'BACKEND DEVELOPER WITH AI/ML EXPERTISE',
+        'RAG & REST API SPECIALIST',
+        'BACKEND & CLOUD ENGINEER'
+    ];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [displayText, setDisplayText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -27,7 +31,7 @@ const Hero = () => {
                     setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
                 }
             }
-        }, isDeleting ? 50 : 100);
+        }, isDeleting ? 40 : 80);
 
         return () => clearTimeout(timeout);
     }, [displayText, isDeleting, currentTitleIndex, titles]);
@@ -65,15 +69,14 @@ const Hero = () => {
                 </div>
 
                 <div className="hero-content">
-                    <p className="hero-greeting">&gt; Initializing...</p>
+                    <p className="hero-greeting">&gt; Initializing System...</p>
                     <h1 className="hero-name animate-name">ISHIKA BELEL</h1>
                     <div className="hero-title-wrapper">
                         <span className="hero-title">{displayText}</span>
                         <span className="cursor">|</span>
                     </div>
                     <p className="hero-description">
-                        Building robust, scalable, and efficient server-side solutions.
-                        Passionate about backend technologies and clean architecture.
+                        Final-year CS student specializing in production-ready REST APIs, JWT authentication, scalable database schemas, and AI/ML features (RAG pipelines, LLM APIs, ChromaDB).
                     </p>
                     <div className="hero-buttons">
                         <button className="btn-primary" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>

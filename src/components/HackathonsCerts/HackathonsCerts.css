@@ -1,0 +1,218 @@
+.hackathons-certs {
+    padding: 100px 20px;
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.hc-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.hc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.hc-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.hc-col-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: var(--accent-light);
+    margin-bottom: 25px;
+}
+
+.certs-col-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.certs-col-header .hc-col-title {
+    margin-bottom: 0;
+}
+
+.drive-btn {
+    background: rgba(61, 156, 48, 0.15);
+    border: 1px solid var(--accent);
+    color: var(--accent-light);
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.drive-btn:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+.hackathon-cards-list, .certs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hc-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 22px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hc-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.hc-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.hc-card-title {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+}
+
+.hc-badge {
+    background: var(--accent);
+    color: #000;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.hc-proj-banner {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--accent);
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.hc-proj-label {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.hc-proj-name {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.hc-card-desc {
+    color: var(--text-secondary);
+    font-size: 1rem5;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.hc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.hc-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Cert Item Styling */
+.cert-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+}
+
+.cert-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cert-icon {
+    font-size: 1.5rem;
+}
+
+.cert-name {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.cert-issuer {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cert-domain-badge {
+    background: rgba(61, 156, 48, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.drive-footer-banner {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(61, 156, 48, 0.08);
+    border: 1px dashed var(--accent);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.drive-footer-banner p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.drive-link-large {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+
+.drive-link-large:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .hc-grid {
+        grid-template-columns: 1fr;
+    }
+}

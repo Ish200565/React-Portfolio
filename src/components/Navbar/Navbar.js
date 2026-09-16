@@ -32,7 +32,11 @@ const Navbar = () => {
                 
                 <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
                     <span onClick={() => scrollToSection('about')}>ABOUT</span>
+                    <span onClick={() => scrollToSection('experience')}>EXPERIENCE</span>
                     <span onClick={() => scrollToSection('projects')}>WORK</span>
+                    <span onClick={() => scrollToSection('hackathons')}>HACKATHONS & CERTS</span>
+                    <span onClick={() => scrollToSection('coding-stats')}>CODING STATS</span>
+                    <span onClick={() => scrollToSection('education')}>EDUCATION</span>
                     <span onClick={() => scrollToSection('contact')}>CONTACT</span>
                 </div>
 
