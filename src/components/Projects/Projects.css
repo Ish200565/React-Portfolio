@@ -17,8 +17,8 @@
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -26,7 +26,7 @@
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: var(--accent);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
@@ -72,9 +72,9 @@
 
 .project-link {
     padding: 12px 24px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--border-color);
     border-radius: 30px;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -82,18 +82,18 @@
 }
 
 .project-link:hover {
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    background: var(--bg-card);
 }
 
 .project-link.primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
     border-color: transparent;
 }
 
 .project-link.primary:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .project-info {
@@ -110,12 +110,12 @@
 .project-number {
     font-size: 2rem;
     font-weight: 800;
-    color: rgba(99, 102, 241, 0.3);
+    color: rgba(244, 240, 250, 0.3);
 }
 
 .project-category {
-    background: rgba(99, 102, 241, 0.1);
-    color: #6366f1;
+    background: rgba(101, 220, 125, 0.1);
+    color: var(--accent);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -126,13 +126,13 @@
 
 .project-title {
     font-size: 1.4rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .project-description {
-    color: #a1a1aa;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -145,8 +145,8 @@
 }
 
 .project-tech span {
-    background: rgba(255, 255, 255, 0.05);
-    color: #71717a;
+    background: var(--bg-card);
+    color: var(--text-secondary);
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -156,13 +156,13 @@
 .projects-more {
     text-align: center;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
 }
 
 .projects-more p {
-    color: #a1a1aa;
+    color: var(--text-secondary);
     font-size: 1rem;
     margin-bottom: 20px;
 }
@@ -171,7 +171,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #6366f1;
+    color: var(--accent);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
@@ -183,7 +183,7 @@
 }
 
 .see-more-btn:hover {
-    color: #8b5cf6;
+    color: var(--accent-light);
 }
 
 .see-more-btn:hover span {

@@ -55,7 +55,7 @@
 
 .drive-btn:hover {
     background: var(--accent);
-    color: #000;
+    color: var(--bg-primary);
 }
 
 .hackathon-cards-list, .certs-list {
@@ -94,7 +94,7 @@
 
 .hc-badge {
     background: var(--accent);
-    color: #000;
+    color: var(--bg-primary);
     padding: 3px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -103,7 +103,7 @@
 }
 
 .hc-proj-banner {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-card);
     border-left: 3px solid var(--accent);
     padding: 6px 12px;
     margin-bottom: 12px;
@@ -137,7 +137,7 @@
 }
 
 .hc-tag {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 3px 8px;

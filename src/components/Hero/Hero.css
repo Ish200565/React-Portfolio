@@ -261,16 +261,18 @@
     }
 }
 
-/* Light theme overrides for hero text */
+/* The terminal canvas stays dark in light mode, so hero content needs light contrast. */
 [data-theme="light"] .hero-greeting,
 [data-theme="light"] .hero-description,
-[data-theme="light"] .scroll-indicator span {
+[data-theme="light"] .scroll-indicator span,
+[data-theme="light"] .btn-secondary {
     color: #ffffff;
 }
 
 [data-theme="light"] .hero-name {
-    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+

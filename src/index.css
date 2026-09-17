@@ -11,7 +11,7 @@
   --text-secondary: #a1a1aa;
   --accent: #3d9c30;
   --accent-light: #6dcf5a;
-  --border-color: rgba(61, 156, 48, 0.3);
+  --border-color: rgba(61, 156, 48, 0.55);
   --shadow-color: rgba(61, 156, 48, 0.2);
   --overlay-bg: rgba(0, 0, 0, 0.6);
 }
