@@ -1,5 +1,6 @@
 import React from 'react';
 import './CodingJourney.css';
+import Icon from '../Icon/Icon';
 
 const CodingJourney = () => {
     const months = ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
@@ -47,7 +48,7 @@ const CodingJourney = () => {
 
                 <div className="cj-stats-cards">
                     <div className="cj-card">
-                        <span className="cj-card-icon">⚡</span>
+                        <span className="cj-card-icon"><Icon name="activity" /></span>
                         <div className="cj-card-info">
                             <span className="cj-number">272+</span>
                             <span className="cj-label">GitHub Contributions (Last Year)</span>
@@ -55,7 +56,7 @@ const CodingJourney = () => {
                     </div>
 
                     <div className="cj-card">
-                        <span className="cj-card-icon">🔥</span>
+                        <span className="cj-card-icon"><Icon name="flame" /></span>
                         <div className="cj-card-info">
                             <span className="cj-number">Active</span>
                             <span className="cj-label">Consistent Backend Commit Activity</span>
@@ -63,7 +64,7 @@ const CodingJourney = () => {
                     </div>
 
                     <div className="cj-card">
-                        <span className="cj-card-icon">🧩</span>
+                        <span className="cj-card-icon"><Icon name="code" /></span>
                         <div className="cj-card-info">
                             <span className="cj-number">60+</span>
                             <span className="cj-label">LeetCode Problems Solved</span>
@@ -71,7 +72,7 @@ const CodingJourney = () => {
                     </div>
 
                     <div className="cj-card">
-                        <span className="cj-card-icon">📦</span>
+                        <span className="cj-card-icon"><Icon name="package" /></span>
                         <div className="cj-card-info">
                             <span className="cj-number">15+</span>
                             <span className="cj-label">Open Source Repositories</span>
@@ -83,7 +84,7 @@ const CodingJourney = () => {
                 <div className="heatmap-container">
                     <div className="heatmap-header">
                         <div className="heatmap-title-group">
-                            <span className="heatmap-title">⌘ GitHub Contribution Graph</span>
+                            <span className="heatmap-title"><Icon name="github" /> GitHub Contribution Graph</span>
                             <span className="heatmap-count">272 contributions in the last year</span>
                         </div>
                         <a href="https://github.com/Ish200565" target="_blank" rel="noopener noreferrer" className="github-btn">

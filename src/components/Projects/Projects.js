@@ -25,14 +25,13 @@ const Projects = () => {
         },
         {
             id: '03',
-            title: 'TransactRank',
-            category: 'Backend Service, FinTech',
-            description: 'A backend service with a live frontend demonstrating API design, data consistency, duplicate prevention, and fair multi-factor ranking. Deployed on Render with PostgreSQL.',
-            tech: ['Python', 'Flask', 'Flask-SQLAlchemy', 'PostgreSQL', 'Vanilla JS', 'Render'],
-            image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop',
-            live: 'https://transact-rank-1.onrender.com',
-            backendApi: 'https://transact-rank.onrender.com',
-            demo: 'https://drive.google.com/file/d/1fCkHJ_fiLU5c7ND937Whl_pYGsyuayUN/view?usp=sharing'
+            title: 'SocioSentiment',
+            category: 'AI/ML & Social Analytics',
+            description: 'Streamlit app using Hugging Face RoBERTa for multilingual sentiment and emotion analysis with live news-feed integration. Deployed with CI/CD pipelines ensuring continuous updates.',
+            tech: ['Python', 'Streamlit', 'Hugging Face RoBERTa', 'CI/CD Pipelines'],
+            image: 'https://plus.unsplash.com/premium_photo-1738663458243-7446dba4551d?w=600&auto=format&fit=crop',
+            github: 'https://github.com/Ish200565/SocioSentiment',
+            live: 'https://sociosentiment-3kxktkrdd5bnlppxsv3zme.streamlit.app/'
         },
         {
             id: '04',
@@ -44,16 +43,19 @@ const Projects = () => {
             live: 'https://safecampus.vercel.app/',
             demo: 'https://www.linkedin.com/posts/ishika-belel-1669b12b7_campusvoice-aiforsafety-nlp-activity-7390775687315460096-QgRy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwk3p4BiRfzg4Zdq3OQ-HtGw8qIr-IwtIs'
         },
+        
         {
             id: '05',
-            title: 'SocioSentiment',
-            category: 'AI/ML & Social Analytics',
-            description: 'Streamlit app using Hugging Face RoBERTa for multilingual sentiment and emotion analysis with live news-feed integration. Deployed with CI/CD pipelines ensuring continuous updates.',
-            tech: ['Python', 'Streamlit', 'Hugging Face RoBERTa', 'CI/CD Pipelines'],
-            image: 'https://plus.unsplash.com/premium_photo-1738663458243-7446dba4551d?w=600&auto=format&fit=crop',
-            github: 'https://github.com/Ish200565/SocioSentiment',
-            live: 'https://sociosentiment-3kxktkrdd5bnlppxsv3zme.streamlit.app/'
+            title: 'TransactRank',
+            category: 'Backend Service, FinTech',
+            description: 'A backend service with a live frontend demonstrating API design, data consistency, duplicate prevention, and fair multi-factor ranking. Deployed on Render with PostgreSQL.',
+            tech: ['Python', 'Flask', 'Flask-SQLAlchemy', 'PostgreSQL', 'Vanilla JS', 'Render'],
+            image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop',
+            live: 'https://transact-rank-1.onrender.com',
+            backendApi: 'https://transact-rank.onrender.com',
+            demo: 'https://drive.google.com/file/d/1fCkHJ_fiLU5c7ND937Whl_pYGsyuayUN/view?usp=sharing'
         },
+        
         {
             id: '06',
             title: 'GharKaKhana',

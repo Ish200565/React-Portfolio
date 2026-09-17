@@ -123,6 +123,10 @@
     color: var(--bg-primary);
 }
 
+.mobile-resume-btn {
+    display: none;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -173,6 +177,27 @@
         transform: translateY(0);
     }
 
+    .navbar-menu .mobile-resume-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        padding: 0.75rem 1.5rem;
+        font-size: 0.7rem;
+        font-weight: 400;
+        font-family: 'Press Start 2P', cursive;
+        letter-spacing: 1px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .navbar-menu .mobile-resume-btn:hover {
+        background: var(--accent);
+        color: var(--bg-primary);
+    }
+
     .hamburger {
         display: flex;
     }
@@ -213,5 +238,16 @@
 
 [data-theme="light"] .navbar-menu span:hover {
     color: #ffffff;
+}
+
+[data-theme="light"] .hamburger span {
+    background: #ffffff;
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] .navbar-menu span,
+    [data-theme="light"] .navbar-menu span:hover {
+        color: var(--text-primary);
+    }
 }
 

@@ -218,11 +218,14 @@
 @media (max-width: 768px) {
     .hero {
         padding: 0 1.5rem;
+        align-items: flex-start;
     }
 
     .hero-main {
         flex-direction: column;
         text-align: center;
+        gap: 2.5rem;
+        padding-top: 76px;
     }
 
     .hero-content {
@@ -238,8 +241,9 @@
     }
 
     .hero-image-section {
-        min-height: 300px;
+        min-height: auto;
         width: 100%;
+        padding-top: 18px;
     }
     
     .hero-description {

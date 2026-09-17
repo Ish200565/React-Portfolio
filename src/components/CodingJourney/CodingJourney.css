@@ -38,6 +38,10 @@
     font-size: 2.2rem;
 }
 
+.cj-card-icon .portfolio-icon {
+    display: block;
+}
+
 .cj-card-info {
     display: flex;
     flex-direction: column;
@@ -79,6 +83,9 @@
     font-size: 0.95rem;
     color: var(--text-primary);
     margin-right: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .heatmap-count {

@@ -1,13 +1,14 @@
 import React from 'react';
 import './Contact.css';
+import Icon from '../Icon/Icon';
 
 const Contact = () => {
     const socialLinks = [
-        { name: 'GitHub (230+ in 2026)', url: 'https://github.com/Ish200565', icon: '⌘' },
-        { name: 'LeetCode (60+ Solved)', url: 'https://leetcode.com/u/Ish200565/', icon: '⚡' },
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ishika-belel-1669b12b7/', icon: '◈' },
-        { name: 'X (Twitter)', url: 'https://x.com/ishbelel', icon: '✦' },
-        { name: 'Instagram', url: 'https://instagram.com/ish_belel', icon: '◉' }
+        { name: 'GitHub (230+ in 2026)', url: 'https://github.com/Ish200565', icon: 'github' },
+        { name: 'LeetCode (60+ Solved)', url: 'https://leetcode.com/u/Ishika_belel/', icon: 'code' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ishika-belel-1669b12b7/', icon: 'linkedin' },
+        { name: 'X (Twitter)', url: 'https://x.com/ishbelel', icon: 'x' },
+        { name: 'Hackerrank', url: 'https://www.hackerrank.com/profile/ishikabelel', icon: 'code' }
     ];
 
     return (
@@ -46,7 +47,7 @@ const Contact = () => {
                                             rel="noopener noreferrer"
                                             className="social-link"
                                         >
-                                            <span className="social-icon">{link.icon}</span>
+                                            <span className="social-icon"><Icon name={link.icon} /></span>
                                             <span className="social-name">{link.name}</span>
                                         </a>
                                     ))}

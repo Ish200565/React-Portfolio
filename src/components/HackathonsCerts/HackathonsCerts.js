@@ -1,5 +1,6 @@
 import React from 'react';
 import './HackathonsCerts.css';
+import Icon from '../Icon/Icon';
 
 const HackathonsCerts = () => {
     const hackathons = [
@@ -104,7 +105,7 @@ const HackathonsCerts = () => {
                                 rel="noopener noreferrer" 
                                 className="drive-btn"
                             >
-                                📁 View Drive Folder ↗
+                                <Icon name="folder" /> View Drive Folder ↗
                             </a>
                         </div>
 
@@ -112,7 +113,7 @@ const HackathonsCerts = () => {
                             {certifications.map((cert, index) => (
                                 <div className="hc-card cert-item-card" key={index}>
                                     <div className="cert-left">
-                                        <span className="cert-icon">📜</span>
+                                        <span className="cert-icon"><Icon name="certificate" /></span>
                                         <div>
                                             <h4 className="cert-name">{cert.name}</h4>
                                             <span className="cert-issuer">{cert.issuer}</span>

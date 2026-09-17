@@ -110,7 +110,7 @@
 .project-number {
     font-size: 2rem;
     font-weight: 800;
-    color: rgba(244, 240, 250, 0.3);
+    color: var(--accent);
 }
 
 .project-category {

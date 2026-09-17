@@ -22,34 +22,110 @@
     color: var(--accent);
 }
 
-.about-content {
-    margin-bottom: 50px;
-}
-
-.about-text {
-    max-width: 900px;
+.terminal-window {
+    max-width: 800px;
     margin: 0 auto;
-    text-align: center;
-    background: var(--bg-card);
+    margin-bottom: 50px;
+    overflow: hidden;
+    background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    padding: 30px;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 12px 30px var(--shadow-color);
 }
 
-.about-text p {
+.terminal-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 42px;
+    padding: 10px 16px;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.terminal-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.terminal-dot-red {
+    background: var(--accent);
+}
+
+.terminal-dot-yellow {
+    background: var(--accent-light);
+}
+
+.terminal-dot-green {
+    background: var(--accent);
+}
+
+.terminal-filename {
     color: var(--text-secondary);
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
-.about-text strong {
+.terminal-body {
+    padding: 28px 30px 32px;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+}
+
+.terminal-command-line {
+    margin-top: 24px;
+}
+
+.terminal-prompt {
     color: var(--accent-light);
+}
+
+.terminal-command {
+    color: var(--text-primary);
+}
+
+.terminal-output {
+    color: var(--text-secondary);
+    margin: 4px 0 0;
+}
+
+.terminal-output strong {
+    color: var(--accent-light);
+    font-weight: 700;
+}
+
+.terminal-cursor {
+    width: 9px;
+    height: 1.2em;
+    margin-top: 22px;
+    background: var(--accent);
+    animation: terminal-blink 1s step-end infinite;
+}
+
+@keyframes terminal-blink {
+    0%, 49% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -133,6 +209,11 @@
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+    .terminal-body {
+        padding: 22px 20px 26px;
+        font-size: 1.05rem;
+    }
     
     .skill-card {
         padding: 24px 20px;
@@ -141,5 +222,26 @@
     .tech-tag {
         font-size: 0.9rem;
         padding: 6px 12px;
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 380px) {
+    .terminal-titlebar {
+        padding: 9px 12px;
+    }
+
+    .terminal-body {
+        padding: 20px 16px 24px;
+        font-size: 1rem;
+    }
+
+    .terminal-filename {
+        font-size: 0.85rem;
     }
 }

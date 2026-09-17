@@ -38,6 +38,9 @@ const Navbar = () => {
                     <span onClick={() => scrollToSection('coding-stats')}>CODING STATS</span>
                     <span onClick={() => scrollToSection('education')}>EDUCATION</span>
                     <span onClick={() => scrollToSection('contact')}>CONTACT</span>
+                    <button className="mobile-resume-btn" onClick={() => window.open('/Res_Ishika_Belel.pdf', '_blank')}>
+                        RESUME
+                    </button>
                 </div>
 
                 <div className="navbar-actions">
