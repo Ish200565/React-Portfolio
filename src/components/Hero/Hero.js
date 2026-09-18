@@ -18,7 +18,7 @@ const Hero = () => {
     const [isLowPowerDevice, setIsLowPowerDevice] = useState(false);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 768px), (pointer: coarse)');
+        const mediaQuery = window.matchMedia('(max-width: 900px), (pointer: coarse), (prefers-reduced-motion: reduce)');
         const updateDeviceMode = () => setIsLowPowerDevice(mediaQuery.matches);
 
         updateDeviceMode();
@@ -51,7 +51,7 @@ const Hero = () => {
     }, [displayText, isDeleting, currentTitleIndex]);
 
     return (
-        <section className="hero" id="hero">
+        <section className={`hero ${isLowPowerDevice ? 'hero-static' : ''}`} id="hero">
             <div className="hero-background">
                 {!isLowPowerDevice && (
                     <FaultyTerminal
