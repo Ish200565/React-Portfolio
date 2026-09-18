@@ -15,28 +15,48 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+    const goToHome = () => {
+        const scrollToHero = () => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+
+        if (window.location.hash === '#credentials') {
+            window.location.hash = '';
+            window.setTimeout(scrollToHero, 0);
+        } else {
+            scrollToHero();
         }
+        setMenuOpen(false);
+    };
+
+    const scrollToSection = (sectionId) => {
+        const scroll = () => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+
+        if (window.location.hash === '#credentials') {
+            window.location.hash = '';
+            window.setTimeout(scroll, 0);
+        } else {
+            scroll();
+        }
+        setMenuOpen(false);
+    };
+
+    const openCredentials = () => {
+        window.location.hash = 'credentials';
         setMenuOpen(false);
     };
 
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
-                <span className="navbar-logo" onClick={() => scrollToSection('hero')}>
+                <span className="navbar-logo" onClick={goToHome}>
                     MY PORTFOLIO<span className="logo-dot"></span>
                 </span>
                 
                 <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
                     <span onClick={() => scrollToSection('about')}>ABOUT</span>
                     <span onClick={() => scrollToSection('experience')}>EXPERIENCE</span>
-                    <span onClick={() => scrollToSection('projects')}>WORK</span>
-                    <span onClick={() => scrollToSection('hackathons')}>HACKATHONS & CERTS</span>
+                    <span onClick={() => scrollToSection('projects')}>PROJECTS</span>
                     <span onClick={() => scrollToSection('coding-stats')}>CODING STATS</span>
-                    <span onClick={() => scrollToSection('education')}>EDUCATION</span>
+                    <span onClick={openCredentials}>CREDENTIALS</span>
                     <span onClick={() => scrollToSection('contact')}>CONTACT</span>
                     <button className="mobile-resume-btn" onClick={() => window.open('/Res_Ishika_Belel.pdf', '_blank')}>
                         RESUME

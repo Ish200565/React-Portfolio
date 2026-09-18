@@ -1,19 +1,29 @@
 /*The main assembler*/
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
 import Projects from './components/Projects/Projects';
-import HackathonsCerts from './components/HackathonsCerts/HackathonsCerts';
-import Education from './components/Education/Education';
 import CodingJourney from './components/CodingJourney/CodingJourney';
 import Contact from './components/Contact/Contact';
+import Credentials from './pages/Credentials/Credentials';
 import './App.css'; 
 
 function App() {
+  const [isCredentialsPage, setIsCredentialsPage] = useState(window.location.hash === '#credentials');
+
   useEffect(() => {
+    const handleHashChange = () => setIsCredentialsPage(window.location.hash === '#credentials');
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (isCredentialsPage) return undefined;
+
     const sections = document.querySelectorAll('.App > section:not(.hero)');
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -35,20 +45,24 @@ function App() {
     sections.forEach(section => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [isCredentialsPage]);
 
   return (
     <ThemeProvider>
-      <div className="App">
+      <div className={`App ${isCredentialsPage ? 'credentials-active' : ''}`}>
         <Navbar />
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <HackathonsCerts />
-        <CodingJourney />
-        <Education />
-        <Contact />
+        {isCredentialsPage ? (
+          <Credentials />
+        ) : (
+          <>
+            <Hero />
+            <About />
+            <Experience />
+            <Projects />
+            <CodingJourney />
+            <Contact />
+          </>
+        )}
       </div>
     </ThemeProvider>
   );

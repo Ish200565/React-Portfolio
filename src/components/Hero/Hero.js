@@ -96,7 +96,7 @@ const Hero = () => {
                     </p>
                     <div className="hero-buttons">
                         <button className="btn-primary" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
-                            View My Work
+                            View My Projects
                         </button>
                         <button className="btn-secondary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
                             Get In Touch

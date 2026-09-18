@@ -44,20 +44,9 @@ const Projects = () => {
             demo: 'https://www.linkedin.com/posts/ishika-belel-1669b12b7_campusvoice-aiforsafety-nlp-activity-7390775687315460096-QgRy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwk3p4BiRfzg4Zdq3OQ-HtGw8qIr-IwtIs'
         },
         
-        {
-            id: '05',
-            title: 'TransactRank',
-            category: 'Backend Service, FinTech',
-            description: 'A backend service with a live frontend demonstrating API design, data consistency, duplicate prevention, and fair multi-factor ranking. Deployed on Render with PostgreSQL.',
-            tech: ['Python', 'Flask', 'Flask-SQLAlchemy', 'PostgreSQL', 'Vanilla JS', 'Render'],
-            image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop',
-            live: 'https://transact-rank-1.onrender.com',
-            backendApi: 'https://transact-rank.onrender.com',
-            demo: 'https://drive.google.com/file/d/1fCkHJ_fiLU5c7ND937Whl_pYGsyuayUN/view?usp=sharing'
-        },
         
         {
-            id: '06',
+            id: '05',
             title: 'GharKaKhana',
             category: 'Web Application',
             description: 'Django web application connecting local food vendors with working bachelors. Custom vendor–customer workflows, order management, and secure authentication.',
@@ -71,7 +60,7 @@ const Projects = () => {
         <section className="projects" id="projects">
             <div className="projects-container">
                 <h2 className="section-title">
-                    MY <span className="highlight">WORK</span>
+                    MY <span className="highlight">PROJECTS</span>
                 </h2>
                 
                 <div className="projects-grid">

@@ -227,10 +227,14 @@
         text-align: center;
         gap: 2.5rem;
         padding-top: 76px;
+        width: 100%;
+        align-items: center;
     }
 
     .hero-content {
         text-align: center;
+        width: 100%;
+        max-width: 600px;
     }
 
     .hero-title-wrapper {
@@ -245,6 +249,7 @@
         min-height: auto;
         width: 100%;
         padding-top: 18px;
+        justify-content: center;
     }
     
     .hero-description {
@@ -279,5 +284,20 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] .hero-greeting,
+    [data-theme="light"] .hero-description,
+    [data-theme="light"] .btn-secondary {
+        color: var(--text-primary);
+    }
+
+    [data-theme="light"] .hero-name {
+        background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 }
 
