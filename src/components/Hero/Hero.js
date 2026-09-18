@@ -15,6 +15,17 @@ const Hero = () => {
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [displayText, setDisplayText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
+    const [isLowPowerDevice, setIsLowPowerDevice] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 768px), (pointer: coarse)');
+        const updateDeviceMode = () => setIsLowPowerDevice(mediaQuery.matches);
+
+        updateDeviceMode();
+        mediaQuery.addEventListener('change', updateDeviceMode);
+
+        return () => mediaQuery.removeEventListener('change', updateDeviceMode);
+    }, []);
 
     useEffect(() => {
         const currentTitle = HERO_TITLES[currentTitleIndex];
@@ -42,25 +53,27 @@ const Hero = () => {
     return (
         <section className="hero" id="hero">
             <div className="hero-background">
-                <FaultyTerminal
-                    scale={1.5}
-                    gridMul={HERO_GRID_MUL}
-                    digitSize={1.7}
-                    timeScale={0.5}
-                    pause={false}
-                    scanlineIntensity={0.5}
-                    glitchAmount={1}
-                    flickerAmount={0}
-                    noiseAmp={1}
-                    chromaticAberration={0}
-                    dither={0}
-                    curvature={0.1}
-                    tint="#3d9c30"
-                    mouseReact
-                    mouseStrength={0.5}
-                    pageLoadAnimation
-                    brightness={0.6}
-                />
+                {!isLowPowerDevice && (
+                    <FaultyTerminal
+                        scale={1.5}
+                        gridMul={HERO_GRID_MUL}
+                        digitSize={1.7}
+                        timeScale={0.5}
+                        pause={false}
+                        scanlineIntensity={0.5}
+                        glitchAmount={1}
+                        flickerAmount={0}
+                        noiseAmp={1}
+                        chromaticAberration={0}
+                        dither={0}
+                        curvature={0.1}
+                        tint="#3d9c30"
+                        mouseReact
+                        mouseStrength={0.5}
+                        pageLoadAnimation
+                        brightness={0.6}
+                    />
+                )}
             </div>
             
             <div className="hero-main">

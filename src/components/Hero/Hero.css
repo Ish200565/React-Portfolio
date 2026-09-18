@@ -219,6 +219,7 @@
     .hero {
         padding: 0 1.5rem;
         align-items: flex-start;
+        background: radial-gradient(circle at 50% 18%, rgba(61, 156, 48, 0.12), transparent 44%), var(--bg-primary);
     }
 
     .hero-main {

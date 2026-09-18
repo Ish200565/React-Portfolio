@@ -205,6 +205,11 @@
     .about {
         padding: 60px 1.2rem;
     }
+
+    .terminal-cursor {
+        animation: none;
+        opacity: 1;
+    }
     
     .skills-grid {
         grid-template-columns: 1fr;
@@ -217,6 +222,7 @@
     
     .skill-card {
         padding: 24px 20px;
+        backdrop-filter: none;
     }
 
     .tech-tag {

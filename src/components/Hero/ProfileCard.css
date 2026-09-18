@@ -158,6 +158,15 @@
 @media (max-width: 768px) {
   .profile-card {
     max-width: 300px;
+    animation: cardEntrance 1s ease-out forwards;
+  }
+
+  .profile-card-inner {
+    animation: none;
+  }
+
+  .profile-card-inner::before {
+    display: none;
   }
 
   .profile-handle-bar {
@@ -165,6 +174,7 @@
     left: 12px;
     right: 12px;
     padding: 10px 16px;
+    backdrop-filter: none;
   }
 
   .profile-handle {
