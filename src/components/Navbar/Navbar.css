@@ -247,18 +247,29 @@
 @media (max-width: 900px) {
     [data-theme="light"] .navbar-menu span,
     [data-theme="light"] .navbar-menu span:hover {
-        color: var(--text-primary);
+        color: var(--text-primary) !important;
     }
 
     [data-theme="light"] .navbar-logo {
-        color: var(--text-primary);
+        color: var(--text-primary) !important;
     }
 
     [data-theme="light"] .hamburger span {
-        background-color: var(--text-primary);
+        background-color: var(--text-primary) !important;
     }
 }
 
+@media (pointer: coarse) {
+    [data-theme="light"] .navbar-logo,
+    [data-theme="light"] .navbar-menu span,
+    [data-theme="light"] .navbar-menu span:hover {
+        color: var(--text-primary) !important;
+    }
+
+    [data-theme="light"] .hamburger span {
+        background-color: var(--text-primary) !important;
+    }
+}
 /* The credentials page has a light background without the hero's dark canvas. */
 [data-theme="light"] .credentials-active .navbar-logo,
 [data-theme="light"] .credentials-active .navbar-menu span,
