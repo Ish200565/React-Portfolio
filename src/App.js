@@ -28,9 +28,19 @@ function App() {
     window.sessionStorage.removeItem('pending-section');
 
     if (pendingSection) {
-      window.requestAnimationFrame(() => {
-        document.getElementById(pendingSection)?.scrollIntoView({ behavior: 'smooth' });
-      });
+      let attempts = 0;
+      const scrollToPendingSection = () => {
+        const section = document.getElementById(pendingSection);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+
+        attempts += 1;
+        if (attempts < 10) window.requestAnimationFrame(scrollToPendingSection);
+      };
+
+      window.requestAnimationFrame(scrollToPendingSection);
     }
 
     const sections = document.querySelectorAll('.App > section:not(.hero)');

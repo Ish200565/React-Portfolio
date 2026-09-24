@@ -15,12 +15,17 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const clearCredentialsRoute = () => {
+        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+        window.dispatchEvent(new Event('hashchange'));
+    };
+
     const goToHome = () => {
         const scrollToHero = () => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
 
         if (window.location.hash === '#credentials') {
             window.sessionStorage.setItem('pending-section', 'hero');
-            window.location.hash = '';
+            clearCredentialsRoute();
         } else {
             scrollToHero();
         }
@@ -32,7 +37,7 @@ const Navbar = () => {
 
         if (window.location.hash === '#credentials') {
             window.sessionStorage.setItem('pending-section', sectionId);
-            window.location.hash = '';
+            clearCredentialsRoute();
         } else {
             scroll();
         }
@@ -40,7 +45,8 @@ const Navbar = () => {
     };
 
     const openCredentials = () => {
-        window.location.hash = 'credentials';
+        window.history.pushState(null, '', '#credentials');
+        window.dispatchEvent(new Event('hashchange'));
         setMenuOpen(false);
     };
 
