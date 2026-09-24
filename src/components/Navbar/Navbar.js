@@ -15,17 +15,17 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const clearCredentialsRoute = () => {
-        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
-        window.dispatchEvent(new Event('hashchange'));
+    const navigate = (hash = '', section = null) => {
+        window.dispatchEvent(new CustomEvent('portfolio:navigate', {
+            detail: { hash, section }
+        }));
     };
 
     const goToHome = () => {
         const scrollToHero = () => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
 
         if (window.location.hash === '#credentials') {
-            window.sessionStorage.setItem('pending-section', 'hero');
-            clearCredentialsRoute();
+            navigate('', 'hero');
         } else {
             scrollToHero();
         }
@@ -36,8 +36,7 @@ const Navbar = () => {
         const scroll = () => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
 
         if (window.location.hash === '#credentials') {
-            window.sessionStorage.setItem('pending-section', sectionId);
-            clearCredentialsRoute();
+            navigate('', sectionId);
         } else {
             scroll();
         }
@@ -45,8 +44,7 @@ const Navbar = () => {
     };
 
     const openCredentials = () => {
-        window.history.pushState(null, '', '#credentials');
-        window.dispatchEvent(new Event('hashchange'));
+        navigate('#credentials');
         setMenuOpen(false);
     };
 

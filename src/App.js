@@ -13,19 +13,33 @@ import './App.css';
 
 function App() {
   const [isCredentialsPage, setIsCredentialsPage] = useState(window.location.hash === '#credentials');
+  const [pendingSection, setPendingSection] = useState(null);
 
   useEffect(() => {
-    const handleHashChange = () => setIsCredentialsPage(window.location.hash === '#credentials');
-    window.addEventListener('hashchange', handleHashChange);
+    const handleRouteChange = () => {
+      setPendingSection(null);
+      setIsCredentialsPage(window.location.hash === '#credentials');
+    };
+    const handlePortfolioNavigation = (event) => {
+      const { hash, section } = event.detail || {};
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash || ''}`);
+      setPendingSection(section || null);
+      setIsCredentialsPage(hash === '#credentials');
+    };
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener('portfolio:navigate', handlePortfolioNavigation);
+
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+      window.removeEventListener('portfolio:navigate', handlePortfolioNavigation);
+    };
   }, []);
 
   useEffect(() => {
     if (isCredentialsPage) return undefined;
-
-    const pendingSection = window.sessionStorage.getItem('pending-section');
-    window.sessionStorage.removeItem('pending-section');
 
     if (pendingSection) {
       let attempts = 0;
@@ -41,6 +55,7 @@ function App() {
       };
 
       window.requestAnimationFrame(scrollToPendingSection);
+      setPendingSection(null);
     }
 
     const sections = document.querySelectorAll('.App > section:not(.hero)');
@@ -64,7 +79,7 @@ function App() {
     sections.forEach(section => observer.observe(section));
 
     return () => observer.disconnect();
-  }, [isCredentialsPage]);
+  }, [isCredentialsPage, pendingSection]);
 
   return (
     <ThemeProvider>
