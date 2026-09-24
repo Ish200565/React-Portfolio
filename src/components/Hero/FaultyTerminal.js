@@ -1,5 +1,5 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
-import { useEffect, useRef, useMemo, useCallback } from 'react';
+import { memo, useEffect, useRef, useMemo, useCallback } from 'react';
 import './FaultyTerminal.css';
 
 const vertexShader = `
@@ -220,7 +220,7 @@ function hexToRgb(hex) {
   return [((num >> 16) & 255) / 255, ((num >> 8) & 255) / 255, (num & 255) / 255];
 }
 
-export default function FaultyTerminal({
+function FaultyTerminal({
   scale = 1,
   gridMul = [2, 1],
   digitSize = 1.5,
@@ -237,7 +237,10 @@ export default function FaultyTerminal({
   background = '#000000',
   mouseReact = true,
   mouseStrength = 0.2,
-  dpr = Math.min(window.devicePixelRatio || 1, 2),
+  dpr = Math.min(
+    window.devicePixelRatio || 1,
+    window.matchMedia('(max-width: 900px)').matches ? 1 : 2
+  ),
   pageLoadAnimation = true,
   brightness = 1,
   className,
@@ -331,17 +334,22 @@ export default function FaultyTerminal({
 
     const visibilityObserver = new IntersectionObserver(([entry]) => {
       isVisibleRef.current = entry.isIntersecting;
+      if (entry.isIntersecting && rafRef.current === 0) {
+        rafRef.current = requestAnimationFrame(update);
+      }
     }, { threshold: 0 });
     visibilityObserver.observe(ctn);
 
     const update = t => {
       if (!isMounted) return;
-      rafRef.current = requestAnimationFrame(update);
-
-      if (!isMounted) return;
       if (!renderer || !mesh || !program) return;
 
-      if (!isVisibleRef.current) return;
+      if (!isVisibleRef.current) {
+        rafRef.current = 0;
+        return;
+      }
+
+      rafRef.current = requestAnimationFrame(update);
 
       if (pageLoadAnimation && loadAnimationStartRef.current === 0) {
         loadAnimationStartRef.current = t;
@@ -417,3 +425,5 @@ export default function FaultyTerminal({
 
   return <div ref={containerRef} className={`faulty-terminal-container ${className || ''}`} style={style} {...rest} />;
 }
+
+export default memo(FaultyTerminal);
