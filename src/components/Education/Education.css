@@ -44,12 +44,14 @@
 .edu-institution {
     font-size: 1.2rem;
     color: var(--text-primary);
+    font-weight: 700;
     margin-bottom: 4px;
 }
 
 .edu-degree {
     font-size: 1.15rem;
     color: var(--accent-light);
+    font-weight: 700;
 }
 
 .edu-meta {
@@ -61,6 +63,7 @@
 .edu-period {
     color: var(--text-secondary);
     font-size: 1rem;
+    font-weight: 700;
 }
 
 .edu-grade {
@@ -75,6 +78,7 @@
 .edu-details {
     color: var(--text-secondary);
     font-size: 1.1rem;
+    font-weight: 700;
     line-height: 1.5;
 }
 
@@ -87,6 +91,7 @@
     padding: 3px 10px;
     border-radius: 4px;
     font-size: 0.9rem;
+    font-weight: 700;
 }
 
 @media (max-width: 768px) {

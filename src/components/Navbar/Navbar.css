@@ -227,21 +227,21 @@
     }
 }
 
-/* The hero backdrop remains dark in light mode. */
+/* Keep desktop navigation readable over the light hero canvas. */
 [data-theme="light"] .navbar-logo {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 [data-theme="light"] .navbar-menu span {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
 }
 
 [data-theme="light"] .navbar-menu span:hover {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 [data-theme="light"] .hamburger span {
-    background: #ffffff;
+    background: var(--text-primary);
 }
 
 @media (max-width: 900px) {

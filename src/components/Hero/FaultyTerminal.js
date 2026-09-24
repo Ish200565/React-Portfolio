@@ -31,6 +31,7 @@ uniform float uChromaticAberration;
 uniform float uDither;
 uniform float uCurvature;
 uniform vec3  uTint;
+uniform vec3  uBackground;
 uniform vec2  uMouse;
 uniform float uMouseStrength;
 uniform float uUseMouse;
@@ -188,16 +189,16 @@ void main() {
     }
     
     vec2 p = uv * uScale;
-    vec3 col = getColor(p);
+    float pattern = clamp(max(max(getColor(p).r, getColor(p).g), getColor(p).b), 0.0, 1.0);
+    vec3 col = mix(uBackground, uTint, pattern * uBrightness);
 
     if(uChromaticAberration != 0.0){
       vec2 ca = vec2(uChromaticAberration) / iResolution.xy;
-      col.r = getColor(p + ca).r;
-      col.b = getColor(p - ca).b;
+      float redPattern = clamp(getColor(p + ca).r, 0.0, 1.0);
+      float bluePattern = clamp(getColor(p - ca).b, 0.0, 1.0);
+      col.r = mix(uBackground.r, uTint.r, redPattern * uBrightness);
+      col.b = mix(uBackground.b, uTint.b, bluePattern * uBrightness);
     }
-
-    col *= uTint;
-    col *= uBrightness;
 
     if(uDither > 0.0){
       float rnd = hash21(gl_FragCoord.xy);
@@ -233,6 +234,7 @@ export default function FaultyTerminal({
   dither = 0,
   curvature = 0.2,
   tint = '#ffffff',
+  background = '#000000',
   mouseReact = true,
   mouseStrength = 0.2,
   dpr = Math.min(window.devicePixelRatio || 1, 2),
@@ -254,6 +256,7 @@ export default function FaultyTerminal({
   const timeOffsetRef = useRef(Math.random() * 100);
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
+  const backgroundVec = useMemo(() => hexToRgb(background), [background]);
 
   const ditherValue = useMemo(() => (typeof dither === 'boolean' ? (dither ? 1 : 0) : dither), [dither]);
 
@@ -274,7 +277,7 @@ export default function FaultyTerminal({
     const renderer = new Renderer({ dpr });
     rendererRef.current = renderer;
     const gl = renderer.gl;
-    gl.clearColor(0, 0, 0, 1);
+    gl.clearColor(backgroundVec[0], backgroundVec[1], backgroundVec[2], 1);
 
     const geometry = new Triangle(gl);
 
@@ -297,6 +300,7 @@ export default function FaultyTerminal({
         uDither: { value: ditherValue },
         uCurvature: { value: curvature },
         uTint: { value: new Color(tintVec[0], tintVec[1], tintVec[2]) },
+        uBackground: { value: new Color(backgroundVec[0], backgroundVec[1], backgroundVec[2]) },
         uMouse: {
           value: new Float32Array([smoothMouseRef.current.x, smoothMouseRef.current.y])
         },
@@ -403,6 +407,7 @@ export default function FaultyTerminal({
     ditherValue,
     curvature,
     tintVec,
+    backgroundVec,
     mouseReact,
     mouseStrength,
     pageLoadAnimation,

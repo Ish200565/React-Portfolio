@@ -1,8 +1,14 @@
 import React from 'react';
 import './About.css';
 import Icon from '../Icon/Icon';
+import TechLogo from './TechLogo';
 
 const About = () => {
+    const floatingTechs = [
+        'Python', 'FastAPI', 'PostgreSQL', 'MongoDB', 'PyTorch', 'Docker',
+        'AWS Fundamentals (Lambda/SES)', 'Git / GitHub', 'TensorFlow', 'Node.js'
+    ];
+
     const skillDomains = [
         {
             category: 'Backend & APIs',
@@ -33,6 +39,18 @@ const About = () => {
     return (
         <section className="about" id="about">
             <div className="about-container">
+                <div className="floating-tech-logos" aria-hidden="true">
+                    {floatingTechs.map((tech, index) => (
+                        <span
+                            className={`floating-tech-logo floating-tech-logo-${index + 1}`}
+                            key={tech}
+                            style={{ animationDelay: `${index * 0.2}s` }}
+                        >
+                            <TechLogo name={tech} />
+                        </span>
+                    ))}
+                </div>
+
                 <h2 className="section-title">
                     ABOUT <span className="highlight">ME</span>
                 </h2>
@@ -80,7 +98,10 @@ const About = () => {
                             <p className="skill-desc">{domain.description}</p>
                             <div className="skill-techs">
                                 {domain.techs.map((tech, i) => (
-                                    <span key={i} className="tech-tag">{tech}</span>
+                                    <span key={i} className="tech-tag">
+                                        <TechLogo name={tech} />
+                                        <span>{tech}</span>
+                                    </span>
                                 ))}
                             </div>
                         </div>

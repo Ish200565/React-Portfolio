@@ -25,6 +25,7 @@
     font-family: 'Press Start 2P', cursive;
     font-size: 1rem;
     color: var(--accent-light);
+    font-weight: 700;
     margin-bottom: 25px;
 }
 
@@ -93,6 +94,7 @@
 .hc-card-title {
     font-size: 1.15rem;
     color: var(--text-primary);
+    font-weight: 700;
 }
 
 .hc-badge {
@@ -128,7 +130,8 @@
 
 .hc-card-desc {
     color: var(--text-secondary);
-    font-size: 1rem5;
+    font-size: 1rem;
+    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -146,6 +149,7 @@
     padding: 3px 8px;
     border-radius: 4px;
     font-size: 0.85rem;
+    font-weight: 700;
 }
 
 /* Cert Item Styling */
@@ -170,12 +174,14 @@
 .cert-name {
     font-size: 1.05rem;
     color: var(--text-primary);
+    font-weight: 700;
     margin-bottom: 2px;
 }
 
 .cert-issuer {
     color: var(--text-secondary);
     font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .cert-domain-badge {
@@ -185,6 +191,7 @@
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.8rem;
+    font-weight: 700;
     white-space: nowrap;
 }
 
@@ -200,6 +207,7 @@
 .drive-footer-banner p {
     color: var(--text-secondary);
     font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 

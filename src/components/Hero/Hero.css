@@ -271,16 +271,16 @@
     }
 }
 
-/* The terminal canvas stays dark in light mode, so hero content needs light contrast. */
+/* Keep terminal content readable while its background follows the selected theme. */
 [data-theme="light"] .hero:not(.hero-static) .hero-greeting,
 [data-theme="light"] .hero:not(.hero-static) .hero-description,
 [data-theme="light"] .hero:not(.hero-static) .scroll-indicator span,
 [data-theme="light"] .hero:not(.hero-static) .btn-secondary {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 [data-theme="light"] .hero:not(.hero-static) .hero-name {
-    background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 100%);
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

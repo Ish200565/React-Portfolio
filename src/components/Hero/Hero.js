@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import FaultyTerminal from './FaultyTerminal';
 import ProfileCard from './ProfileCard';
+import { useTheme } from '../../context/ThemeContext';
 
 const HERO_TITLES = [
     'BACKEND DEVELOPER WITH AI/ML EXPERTISE',
@@ -12,6 +13,7 @@ const HERO_TITLES = [
 const HERO_GRID_MUL = [2, 1];
 
 const Hero = () => {
+    const { isDark } = useTheme();
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [displayText, setDisplayText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -67,11 +69,12 @@ const Hero = () => {
                         chromaticAberration={0}
                         dither={0}
                         curvature={0.1}
-                        tint="#3d9c30"
+                        tint={isDark ? '#3d9c30' : '#c4ddbf'}
                         mouseReact
                         mouseStrength={0.5}
                         pageLoadAnimation
-                        brightness={0.6}
+                        brightness={isDark ? 0.6 : 0.38}
+                        background={isDark ? '#000000' : '#f3f6f1'}
                     />
                 )}
             </div>
