@@ -19,8 +19,8 @@ const Navbar = () => {
         const scrollToHero = () => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
 
         if (window.location.hash === '#credentials') {
+            window.sessionStorage.setItem('pending-section', 'hero');
             window.location.hash = '';
-            window.setTimeout(scrollToHero, 0);
         } else {
             scrollToHero();
         }
@@ -31,8 +31,8 @@ const Navbar = () => {
         const scroll = () => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
 
         if (window.location.hash === '#credentials') {
+            window.sessionStorage.setItem('pending-section', sectionId);
             window.location.hash = '';
-            window.setTimeout(scroll, 0);
         } else {
             scroll();
         }

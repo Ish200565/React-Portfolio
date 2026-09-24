@@ -24,6 +24,15 @@ function App() {
   useEffect(() => {
     if (isCredentialsPage) return undefined;
 
+    const pendingSection = window.sessionStorage.getItem('pending-section');
+    window.sessionStorage.removeItem('pending-section');
+
+    if (pendingSection) {
+      window.requestAnimationFrame(() => {
+        document.getElementById(pendingSection)?.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
     const sections = document.querySelectorAll('.App > section:not(.hero)');
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

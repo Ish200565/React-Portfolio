@@ -11,14 +11,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-    const [isDark, setIsDark] = useState(() => {
-        const saved = localStorage.getItem('theme');
-        return saved ? saved === 'dark' : true;
-    });
+    const [isDark, setIsDark] = useState(true);
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }, [isDark]);
 
     const toggleTheme = () => {
