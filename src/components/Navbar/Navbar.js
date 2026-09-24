@@ -15,37 +15,18 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navigate = (hash = '', section = null) => {
-        window.dispatchEvent(new CustomEvent('portfolio:navigate', {
-            detail: { hash, section }
-        }));
-    };
-
     const goToHome = () => {
-        const scrollToHero = () => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
-
-        if (window.location.hash === '#credentials') {
-            navigate('', 'hero');
-        } else {
-            scrollToHero();
-        }
+        document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         setMenuOpen(false);
     };
 
     const scrollToSection = (sectionId) => {
-        const scroll = () => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-
-        if (window.location.hash === '#credentials') {
-            navigate('', sectionId);
-        } else {
-            scroll();
-        }
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         setMenuOpen(false);
     };
 
     const openCredentials = () => {
-        navigate('#credentials');
-        setMenuOpen(false);
+        scrollToSection('credentials');
     };
 
     return (

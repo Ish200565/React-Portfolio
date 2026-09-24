@@ -13,6 +13,8 @@
   margin-bottom: 60px;
   color: var(--text-primary);
   letter-spacing: 2px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .section-title .highlight {
@@ -98,5 +100,14 @@
     transform: none;
     animation: none;
     transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: clamp(1.25rem, 8vw, 2rem);
+    line-height: 1.45;
+    letter-spacing: 1px;
+    margin-bottom: 36px;
   }
 }

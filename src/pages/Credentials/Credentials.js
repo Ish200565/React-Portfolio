@@ -5,10 +5,9 @@ import './Credentials.css';
 
 const Credentials = () => {
     return (
-        <main className="credentials-page">
-            
-            <HackathonsCerts />
+        <main className="credentials-page" id="credentials">
             <Education />
+            <HackathonsCerts />
         </main>
     );
 };

@@ -1,5 +1,5 @@
 /*The main assembler*/
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -12,53 +12,8 @@ import Credentials from './pages/Credentials/Credentials';
 import './App.css'; 
 
 function App() {
-  const [isCredentialsPage, setIsCredentialsPage] = useState(window.location.hash === '#credentials');
-  const [pendingSection, setPendingSection] = useState(null);
-
   useEffect(() => {
-    const handleRouteChange = () => {
-      setPendingSection(null);
-      setIsCredentialsPage(window.location.hash === '#credentials');
-    };
-    const handlePortfolioNavigation = (event) => {
-      const { hash, section } = event.detail || {};
-      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash || ''}`);
-      setPendingSection(section || null);
-      setIsCredentialsPage(hash === '#credentials');
-    };
-
-    window.addEventListener('hashchange', handleRouteChange);
-    window.addEventListener('popstate', handleRouteChange);
-    window.addEventListener('portfolio:navigate', handlePortfolioNavigation);
-
-    return () => {
-      window.removeEventListener('hashchange', handleRouteChange);
-      window.removeEventListener('popstate', handleRouteChange);
-      window.removeEventListener('portfolio:navigate', handlePortfolioNavigation);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isCredentialsPage) return undefined;
-
-    if (pendingSection) {
-      let attempts = 0;
-      const scrollToPendingSection = () => {
-        const section = document.getElementById(pendingSection);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          return;
-        }
-
-        attempts += 1;
-        if (attempts < 10) window.requestAnimationFrame(scrollToPendingSection);
-      };
-
-      window.requestAnimationFrame(scrollToPendingSection);
-      setPendingSection(null);
-    }
-
-    const sections = document.querySelectorAll('.App > section:not(.hero)');
+    const sections = document.querySelectorAll('.App > section');
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       sections.forEach(section => section.classList.add('is-visible'));
@@ -79,24 +34,19 @@ function App() {
     sections.forEach(section => observer.observe(section));
 
     return () => observer.disconnect();
-  }, [isCredentialsPage, pendingSection]);
+  }, []);
 
   return (
     <ThemeProvider>
-      <div className={`App ${isCredentialsPage ? 'credentials-active' : ''}`}>
+      <div className="App">
         <Navbar />
-        {isCredentialsPage ? (
-          <Credentials />
-        ) : (
-          <>
-            <Hero />
-            <About />
-            <Experience />
-            <Projects />
-            <CodingJourney />
-            <Contact />
-          </>
-        )}
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Credentials />
+        <CodingJourney />
+        <Contact />
       </div>
     </ThemeProvider>
   );
