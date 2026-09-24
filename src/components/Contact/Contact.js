@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 import Icon from '../Icon/Icon';
 
 const Contact = () => {
+    const [isSending, setIsSending] = useState(false);
+    const [status, setStatus] = useState({ type: '', message: '' });
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setIsSending(true);
+        setStatus({ type: '', message: '' });
+
+        try {
+            if (!process.env.REACT_APP_EMAILJS_SERVICE_ID ||
+                !process.env.REACT_APP_EMAILJS_TEMPLATE_ID ||
+                !process.env.REACT_APP_EMAILJS_PUBLIC_KEY) {
+                throw new Error('EmailJS is not configured');
+            }
+
+            await emailjs.sendForm(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                event.currentTarget,
+                { publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY }
+            );
+            event.currentTarget.reset();
+            setStatus({ type: 'success', message: 'Message sent successfully.' });
+        } catch (error) {
+            setStatus({ type: 'error', message: 'Message could not be sent. Please try again.' });
+        } finally {
+            setIsSending(false);
+        }
+    };
+
     const socialLinks = [
         { name: 'GitHub (230+ in 2026)', url: 'https://github.com/Ish200565', icon: 'github' },
         { name: 'LeetCode (60+ Solved)', url: 'https://leetcode.com/u/Ishika_belel/', icon: 'code' },
@@ -57,23 +88,28 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-form-wrapper">
-                        <form className="contact-form">
+                        <form className="contact-form" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label>Your Name</label>
-                                <input type="text" placeholder="Raj Gupta" required />
+                                <input name="from_name" type="text" placeholder="Raj Gupta" required />
                             </div>
                             <div className="form-group">
                                 <label>Your Email</label>
-                                <input type="email" placeholder="raj@example.com" required />
+                                <input name="reply_to" type="email" placeholder="raj@example.com" required />
                             </div>
                             <div className="form-group">
                                 <label>Message</label>
-                                <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+                                <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
                             </div>
-                            <button type="submit" className="submit-btn">
-                                Send Message
+                            <button type="submit" className="submit-btn" disabled={isSending}>
+                                {isSending ? 'Sending...' : 'Send Message'}
                                 <span className="btn-arrow">→</span>
                             </button>
+                            {status.message && (
+                                <p className={`form-status ${status.type}`} role="status">
+                                    {status.message}
+                                </p>
+                            )}
                         </form>
                     </div>
                 </div>

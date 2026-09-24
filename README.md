@@ -52,6 +52,16 @@ npm run build
 
 The optimized output is generated in the `build` directory.
 
+### Configure Contact Form
+
+Create a `.env` file in the project root using `.env.example`, then add the Service ID, Template ID, and Public Key from your EmailJS account. Configure the EmailJS template to send to `ishikabelel@gmail.com` and use these form variables:
+
+- `from_name`
+- `reply_to`
+- `message`
+
+Restart the development server after changing `.env`.
+
 ## Available Scripts
 
 | Command | Description |
