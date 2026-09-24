@@ -102,8 +102,10 @@
 
 .project-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     margin-bottom: 15px;
 }
 
@@ -129,6 +131,7 @@
     color: var(--text-primary);
     margin-bottom: 10px;
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .project-description {
@@ -201,6 +204,15 @@
     
     .project-image {
         height: 180px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-category {
+        max-width: 100%;
+        text-align: right;
     }
     
     .project-links {
